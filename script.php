@@ -1,11 +1,18 @@
 <?php
 
+/* VARIABLES */
+
 $wordText = $_POST["frase"];
 $censoredText = $_POST["censored"];
 //$sostituita = '***';
-$censoredTextLenght = strlen($censoredText);
 //$wordTextCensored = str_replace(strtolower($censoredText), $sostituita, strtolower($wordText));
-$wordTextCensored = $wordText . substr_replace(' ', str_repeat('*', $censoredTextLenght), $censoredTextLenght)
+
+/* strlen($nomeVariabile); = Restituisce la lunghezza del dato 'string' */
+$censoredTextLenght = strlen($censoredText);
+
+/* substr_replace($nomeVariabile) — Sostituisce il testo all'interno di una porzione di una stringa */
+/* str_repeat($nomeVariabile) — Ripete una stringa */
+$wordTextCensored = $wordText . substr_replace(' ', str_repeat('*', $censoredTextLenght), $censoredTextLenght)//capire come applicare "strtolower
 
 ?>
 
@@ -24,6 +31,7 @@ $wordTextCensored = $wordText . substr_replace(' ', str_repeat('*', $censoredTex
     <div>
         <h1>PHP Badwords</h1>
         <h2>La tua frase: </h2>
+        <!-- "echo" è una funzione per generare output testuale dinamico. -->
         <p><?php echo $wordText; ?> <?php echo strlen($wordText); ?></p>
 
         <h2>Parola da censurare: </h2>
