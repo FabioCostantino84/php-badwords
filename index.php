@@ -20,20 +20,14 @@ var_dump($censured); */
 
 <body>
 
-    <!-- <form>
-        <input type="text" name="frase" id="frase" placeholder="scrivi una frase">
-        <input type="text" name="censured" id="censured" placeholder="parola da censurare">
-        <button type="submit">Save</button>
-    </form> -->
-
     <form action="script.php" method="post">
         <input type="text" name="frase" id="frase" placeholder="Scrivi una frase">
         <input type="text" name="censored" id="censored" placeholder="Scrivi la parola da censurare">
         <button type="submit">Save</button>
     </form>
 
-    <!-- <h2>La tua frase: <?php echo $_GET['frase'] ?></h2>
-    <h2>Parola censurata: <?php echo $_GET['censored'] ?></h2> -->
+    <!-- <h2>La tua frase: <?php echo $_GET['frase'] ?></h2> -->
+    <!-- <h2>Parola censurata: <?php echo $_GET['censored'] ?></h2> -->
 
 </body>
 
