@@ -5,7 +5,7 @@ $censored = $_POST["censored"];
 //$sostituita = '***';
 $censoredLenght = strlen($censored);
 //$fraseCensored = str_replace(strtolower($censored), $sostituita, strtolower($frase));
-$fraseCensored = substr_replace($frase, str_repeat('*', $censoredLenght), $censoredLenght)
+$fraseCensored = $frase.substr_replace(' ', str_repeat('*', $censoredLenght), $censoredLenght)
 
 
 ?>
