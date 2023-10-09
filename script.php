@@ -1,12 +1,11 @@
 <?php
 
-$frase = $_POST["frase"];
-$censored = $_POST["censored"];
+$wordText = $_POST["frase"];
+$censoredText = $_POST["censored"];
 //$sostituita = '***';
-$censoredLenght = strlen($censored);
-//$fraseCensored = str_replace(strtolower($censored), $sostituita, strtolower($frase));
-$fraseCensored = $frase.substr_replace(' ', str_repeat('*', $censoredLenght), $censoredLenght)
-
+$censoredTextLenght = strlen($censoredText);
+//$wordTextCensored = str_replace(strtolower($censoredText), $sostituita, strtolower($wordText));
+$wordTextCensored = $wordText . substr_replace(' ', str_repeat('*', $censoredTextLenght), $censoredTextLenght)
 
 ?>
 
@@ -25,13 +24,13 @@ $fraseCensored = $frase.substr_replace(' ', str_repeat('*', $censoredLenght), $c
     <div>
         <h1>PHP Badwords</h1>
         <h2>La tua frase: </h2>
-        <p><?php echo $frase; ?> <?php echo strlen($frase); ?></p>
+        <p><?php echo $wordText; ?> <?php echo strlen($wordText); ?></p>
 
         <h2>Parola da censurare: </h2>
-        <p><?php echo $censored; ?> <?php echo strlen($censored); ?></p>
+        <p><?php echo $censoredText; ?> <?php echo strlen($censoredText); ?></p>
 
         <h2>Frase con la parola censurata: </h2>
-        <p><?php echo $fraseCensored; ?></p>
+        <p><?php echo $wordTextCensored; ?></p>
     </div>
 
 </body>
