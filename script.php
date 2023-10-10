@@ -1,9 +1,24 @@
+<!-- 
+Descrizione:
+Creare un form PHP che permetta di inviare due campi: un paragrafo ed una parola da censurare.
+
+Gestire il tutto con due file diversi.
+index.php
+script.php
+
+Il primo file dovrà permettere all’utente di inserire i dati e inviare la richiesta al server tramite il form (occhio a quato detto stamattina sui form e gli attributi necessari).
+
+Il secondo file riceverà la richiesta ed eseguirà queste operazioni:
+ stampare a schermo il paragrafo e la sua lunghezza
+stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare
+ -->
+
 <?php
 
 /* VARIABLES */
 
-$wordText = $_POST["frase"];
-$censoredText = $_POST["censored"];
+$wordText = $_GET["frase"];
+$censoredText = $_GET["censored"];
 //$sostituita = '***';
 //$wordTextCensored = str_replace(strtolower($censoredText), $sostituita, strtolower($wordText));
 
@@ -12,7 +27,8 @@ $censoredTextLenght = strlen($censoredText);
 
 /* substr_replace($nomeVariabile) — Sostituisce il testo all'interno di una porzione di una stringa */
 /* str_repeat($nomeVariabile) — Ripete una stringa */
-$wordTextCensored = $wordText . substr_replace(' ', str_repeat('*', $censoredTextLenght), $censoredTextLenght)//capire come applicare "strtolower
+// $wordTextCensored = $wordText . str_replace(' ', str_repeat('*', $censoredTextLenght), $censoredTextLenght)//capire come applicare "strtolower
+$wordTextCensored = str_replace($censoredText, '***', $wordText);
 
 ?>
 

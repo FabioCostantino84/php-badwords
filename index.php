@@ -20,7 +20,7 @@ var_dump($censured); */
 
 <body>
 
-    <form action="script.php" method="post">
+    <form action="script.php" method="GET">
         <input type="text" name="frase" id="frase" placeholder="Scrivi una frase">
         <input type="text" name="censored" id="censored" placeholder="Scrivi la parola da censurare">
         <button type="submit">Save</button>
